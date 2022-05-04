@@ -2,15 +2,39 @@
 
 ### Project Description
 
-We plan to implement a version of the game “Simon Says,” using LEDs to display the pattern, and buttons for the user to press to repeat the displayed pattern. The traditional version of “Simon Says” includes four colors (red, blue, green, and yellow), so we will attach four LEDs to the board to replicate this. The player will then also need four buttons, so we will also attach four buttons to the board as well. The LEDs will display a pattern the player must replicate, which the player will then do by pressing the corresponding buttons. Each level will get more difficult by extending the pattern by one every round.
+We are going to create a red light green light game where we take the board’s capacitive touch as an input (ie to move forward, right and left) and transmit that information (using UART) to a Python program using Pygame as the GUI. The goal is to move across the screen to the end while dodging obstacles, only moving while the light is green. If you move during the red light, you lose the game.
 ### Technical Approach
 
-We also plan to display the player’s score on the onboard LCD screen. For each pattern the player replicates correctly, they will receive one point and the score will be updated. Each round of pattern-displaying will be a single process, so these processes will be scheduled in First-In-First-Out order. We will be randomly selecting patterns to display by using the random function in C to select random integers that will correspond to LED lights.
-We also plan to display the player’s score on the onboard LCD screen. For each pattern the player replicates correctly, they will receive one point and the score will be updated. Each round of pattern-displaying will be a single process, so these processes will be scheduled in First-In-First-Out order. We will be randomly selecting patterns to display by using the random function in C to select random integers that will correspond to LED lights.
+* Peripheral: capacitive touch slider, LEDs, and UART Serial
+
+* Software features: interrupts, UART communication, Pygame
+
+* We will use an interrupt, loaded with a randomly generated value, to change between the red and green lights (indicated by the LEDs).
+
+* The interrupts will trigger LEDs as well
+
+* We will split the capacitive touch slider into three sections: move left, move forward, and move right)
+
+* We will transmit the input on the board and the lighting changes to the Python game
+
+* We will use another interrupt to check every millisecond whether there is input while the light is red. 
+* Peripheral: capacitive touch slider, LEDs, and UART Serial
+
+* Software features: interrupts, UART communication, Pygame
+
+* We will use an interrupt, loaded with a randomly generated value, to change between the red and green lights (indicated by the LEDs).
+
+* The interrupts will trigger LEDs as well
+
+* We will split the capacitive touch slider into three sections: move left, move forward, and move right)
+
+* We will transmit the input on the board and the lighting changes to the Python game
+
+* We will use another interrupt to check every millisecond whether there is input while the light is red. 
 
 ## Feedback.
 
 ## Welcome team! Please edit me.
 ### You can use the 'main' branch for you code.
 ### The GitHub web-page should be in the 'gh-pages' branch
-You can access the page adding a "pages" prefix to the url for the git repo e.g. if your browser currently shows https://github.coecis.cornell.edu/ece3140-sp22/asc327-ims68-mtg86 then the GitHub page is at https://pages.github.coecis.cornell.edu/ece3140-sp22/asc327-ims68-mtg86 . You can edit the source in the gh-pages branch or use the "automatic page generator" acessible via settings->options in the GitHub Pages Section toward the bottom. We recommend the latter approach since it is quick and easy. We made an initial wepage that you can edit and a description of the headings we expect to see.
+You can access the page adding a "pages" prefix to the url for the git repo e.g. if your browser currently shows https://github.coecis.cornell.edu/ece3140-sp22/brk57-cds258-jwl266 then the GitHub page is at https://pages.github.coecis.cornell.edu/ece3140-sp22/brk57-cds258-jwl266 . You can edit the source in the gh-pages branch or use the "automatic page generator" acessible via settings->options in the GitHub Pages Section toward the bottom. We recommend the latter approach since it is quick and easy. We made an initial wepage that you can edit and a description of the headings we expect to see.
