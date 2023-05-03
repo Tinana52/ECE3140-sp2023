@@ -2,11 +2,13 @@
 
 ### Project Description
 
-We plan to make a small scale robotic assembly arm. The idea as of right now is to use roughly 3 servos, 3 potentiometers, the board, and popsicles( or just a small lightweight strong material that the servos can move) to create the arm and allow it to pick up extremely small objects like pennies ,quarters ,dimes etc. The potentiometers would allow a person to control the rotation of base, up and down movement of the joint, and control over opening and closing the claw. In essence the board is going to be used to gather the signals coming from the potentiometers and output signals to the servos to turn however many degrees.
+We will be utilizing a soil moisture sensor with probes that will light up the green and red LEDs to display when the plants need water. We are planning on using the following small sensor with soil moisture probes (https://components101.com/modules/soil-moisture-sensor-module ). We will hold the green LED constant if there is sufficient water in the soil (300-700). Once it gets below 300, then we know the soil is dry and we will flash the red LED at faster rates as the soil moisture gets closer to 0. To determine if the moisture sensor is working, we will also have a cup of water because the range of outputs in water is 700-950. 
+
+ 
 ### Technical Approach
 
-In terms of peripherals, we will be using potentiometers and servos. Most of the technical approach was stated in the high level description. Details to add is that we will be trying to implement a PWM signal to signal to the servo how many degrees to turn. Since the device is not an Arduino we can not simply hard code the degrees of motion like "servo.write(45)". We need to implement code that will send a PWM signal to the servo so that the servo will turn as the potentiometer turns. We are not sure how to properly implement the signals from the potentiometer but as of right now we are assuming it is a similar approach to Arduino. Our board has analog pins so it seems that we will simply hook up the pots(we will refer to potentiometers as this to make it easier to type) to power, ground, and the analog pins and read the values that the board detects. From there we will make those values to a scale for the servos so that it will be easier to interpret the degrees the servo is supposed to turn. 
+We will likely use the ADC (Analog-to-Digital Converter) built onto the FRDM-KL46Z board because the one on our chip only converts to “high” and “low” digital outputs which is not enough information for what we want to accomplish. The ADC component in the board includes pins for analog voltage input, gnd and voltage output to power the sensor. We will also be using the LED libraries from past labs. 
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/app67-dtt34/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/app67-dtt34/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/ara89-see62/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/ara89-see62/).
 
 You edit you page in the gh-page branch of this repo.
