@@ -2,29 +2,11 @@
 
 ### Project Description
 
-The general idea is to make a speech-to-text program, then use the text to prompt Open AI’s GPT-4 model (the same model used to implement chatGPT)
+We plan to make a small scale robotic assembly arm. The idea as of right now is to use roughly 3 servos, 3 potentiometers, the board, and popsicles( or just a small lightweight strong material that the servos can move) to create the arm and allow it to pick up extremely small objects like pennies ,quarters ,dimes etc. The potentiometers would allow a person to control the rotation of base, up and down movement of the joint, and control over opening and closing the claw. In essence the board is going to be used to gather the signals coming from the potentiometers and output signals to the servos to turn however many degrees.
 ### Technical Approach
 
-To achieve this, we would need to hook up a microphone to the board and then use the board’s Audio to Digital converter to get the voice data in digital format. We would then use Google’s speech-to-text API to generate text from the voice data. Finally, we would use this text to prompt chatGPT. 
-
- 
-
-To make the project more involved, we would use one of the switches on the board to light up the red LED which will serve as an indication that the microphone is recording. Also, because of constraints of memory and tokens for the chatGPT model, we limit the recording time to a number of seconds before the board stops recording. 
-
-The microphone to be used:
-
-https://learn.sparkfun.com/tutorials/electret-mic-breakout-board-hookup-guide
-
- 
-
-List of supplies:
-
-Microphone
-
-Breadboard
-
-Wires
+In terms of peripherals, we will be using potentiometers and servos. Most of the technical approach was stated in the high level description. Details to add is that we will be trying to implement a PWM signal to signal to the servo how many degrees to turn. Since the device is not an Arduino we can not simply hard code the degrees of motion like "servo.write(45)". We need to implement code that will send a PWM signal to the servo so that the servo will turn as the potentiometer turns. We are not sure how to properly implement the signals from the potentiometer but as of right now we are assuming it is a similar approach to Arduino. Our board has analog pins so it seems that we will simply hook up the pots(we will refer to potentiometers as this to make it easier to type) to power, ground, and the analog pins and read the values that the board detects. From there we will make those values to a scale for the servos so that it will be easier to interpret the degrees the servo is supposed to turn. 
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/aoa9-cca54/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/aoa9-cca54/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/app67-dtt34/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/app67-dtt34/).
 
 You edit you page in the gh-page branch of this repo.
