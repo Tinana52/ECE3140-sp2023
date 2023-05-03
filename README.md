@@ -2,27 +2,44 @@
 
 ### Project Description
 
-The project we have in mind is a music tuner/mixer. On a high level we plan on basically doing an audio synthesizer. We will input a song (or some kind of a sound) into a microphone, then perform the DFT using the FFT to obtain the frequency information from that sound. Afterwards we can do (some) of the following:
-
-* Record a second sound that will also be transformed into the frequency domain and then convolved with the FT of the first recorded sound 
-
-* This has the same effect as multiplying the sounds in the time domain so this way we could mix different recorded sounds. This transformed sound will be sent to a computer where we can play it back to hear the new sound. 
-
-* Using the buttons on the board specify the scaling factor for speeding out the sound, then playing it back / saving it on the computer
-
-* Essentially creating a synthesizer, by pushing the buttons, we would like the increase or decrease the speed of the existing sound. This transformed sound will be sent to a computer where we can play it back to hear the new sound. First there will be a button that will signal to the microcontroller to start recording audio. We will press it again to get it to stop recording. Then there will be another set of buttons that will control the speed. On the microcontroller based on how many times the button is pressed on the board, it will set off a bunch of calculations that will change the recording. This transformed recording will be uploaded to a computer where we can play it back and listen to the audio. 
-
-* Another idea we have is to use many LEDs lined up in a row(using a breadboard with an external battery, buck converter, and maybe some resistors) and depending on the pitch of the sound, it will change how many LEDs light up in the row. A lower pitch will not have a bunch of LEDs light up while a higher pitch will have many more LEDs light up. The goal is to have the LEDs light up in real time with input from a microphone that will be set up. Basically we can play a song on our phones up to a microphone and this will cause LEDs to light up on the breadboard quickly in response to the song. To calculate the pitches we plan to use the FFT functions from the library to calculate the pitch. We will code on the microcontroller certain thresholds that will control how many LEDs light up. Currently we don’t plan on changing the light of the LED but rather the quantity of LEDs that light up. 
+Our final project idea involves a piezoelectric sensor, a personal computer, and our board. We may use bluetooth in the end if the project is not too hard. We plan to place a piezoelectric sensor underneath a floor mat so that when someone steps on it, it changes the tabs on your computer, hiding your recent computer activity.
 ### Technical Approach
 
-The technical approach we intend to take is to use ideas of concurrency, locks, and scheduling as there will be multiple processes going on if we use a microphone and multiple buttons that will take in input (start / stop recording) and control our audio. Our system will simultaneously take in input from the microphone and output LEDs (possibly). Multiple processes will be happening in our system which means we need to schedule the processes so it seems like concurrency is happening. We might also need locks to control user mishaps with the switch pressing. We will also have to configure the ports on the board to connect it to a microphone to read the audio. Some software features would include the Fourier Transform libraries(noted below), the implementation of the microphone/sensor audio values to a frequency based audio(used within the Fourier Transform), and the (depending on the project) implementation of creating a new audio file. 
+We will use a Ceramic Piezo Vibration Sensor. Some options can be:
+https://www.amazon.com/MakerHawk-Analog-Ceramic-Vibration-Arduino/dp/B07KS5NV4V/ref=asc_df_B07KS5NV4V?tag=bngsmtphsnus-20&linkCode=df0&hvadid=80264466527755&hvnetw=s&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=&hvtargid=pla-4583863993163556&psc=1
 
-The resource we will use to calculate the DFT through the FFT is the [CMSIS DSP] (https://www.keil.com/pack/doc/CMSIS/DSP/html/index.html) library that will have support for the functions. 
+ 
 
-The microphone we plan to use is an [Electret Microphone Amplifier - MAX4466 with Adjustable Gain] (https://www.adafruit.com/product/1063). 
+https://www.amazon.com/dp/B08254BM7X/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B08254BM7X&pd_rd_w=dHdlW&content-id=amzn1.sym.88097cb9-5064-44ef-891b-abfacbc1c44b&pf_rd_p=88097cb9-5064-44ef-891b-abfacbc1c44b&pf_rd_r=TR9V47YS3XM33AAF3JGF&pd_rd_wg=JJXjG&pd_rd_r=f7c1afd7-fd56-4edf-b0e1-9469410977ae&s=industrial&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWw&smid=A36ZH2MCHPKXUA
 
-The peripherals we plan to use are to convert ADC/DAC. We do not plan to use many communication protocols because we are mainly soldering everything on and connecting everything through wires. Based on the microphone we are using and the pins it has we might be using SPI communication but right now based on the microphone we have chosen we plan to not use this communication protocol. To connect the microcontroller to a computer we will be using UART with the cable. 
+ 
+
+Since the output signal of the sensor will be analog, we will also include an analog to digital converter.
+
+https://www.sparkfun.com/products/12918
+
+ 
+
+We are not sure about how to tackle bluetooth communication. We believe that the board itself cannot do that so we probably need something else. Recommendations here would be very useful.
+
+ 
+
+A high-level block diagram for our system is depicted below. The floor mat will need to be an elastic or bouncy material so that when someone steps on it, it will vibrate or flex enough for the piezoelectric sensor to detect it. The piezoelectric sensor will then convert the physical vibration to a voltage, and then output an analog signal to the ADC converter. The digital signal generated from the ADC will be inputted into our FRDM-KL46Z board. A power supply and a bluetooth module will be needed if we choose to wirelessly connect the board to the computer for tab switching. If this is too complicated, we will discreetly use a long cord to connect the board to our computer.
+
+Diagram for the circuit:[Screen Shot 2023-04-20 at 9.43.01 PM.png] (/users/68127/files/8105622/preview?verifier=EGhVsXvgBVnB6989beBUpvEFsdheqqLZZOT9R5ht)
+
+ 
+
+Software: 
+
+Regarding the NPX board, we will need to use GPIO pins to detect the signals from the hardware devices. Consequently, we might need to set these pins properly by enabling PIT interrupts. This software setup might be similar to Lab 2.
+
+ 
+
+Regarding the personal computer, we need to make use of software that blocks the computer. This can be implemented by two Python scripts. One of them will be in charge of creating a tab and another one will be in charge of closing that tab. The script will be implemented once the computer receives the bluetooth signal, which will be the output of the NPX board. It will create a new black tab covering the old ones. Once the floor mat stops detecting a certain weight, the bluetooth signal will stop. Therefore, the second Python script will be implemented and the black covering tab will be closed.
+
+[Screen Shot 2023-04-20 at 9.43.41 PM.png] (/users/68127/files/8105624/preview?verifier=rVRt6prR3FutIUF54pmmEH0emAyyKjW274Sq8o0u)
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/ayl47-dht35-zk66/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/ayl47-dht35-zk66/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/ayl48-gg433-sm2494/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/ayl48-gg433-sm2494/).
 
 You can edit your page in the gh-page branch of this repo.
