@@ -2,13 +2,15 @@
 
 ### Project Description
 
-The project is a simple traffic light system that uses an Ultrasonic Distance Sensor (HC-SR04) and a NXP FRDM-KL46Z board, along with two different color LEDs (one red and one green). The device will simulate the behavior of a traffic light, changing between red and green states depending on the presence of an object within a certain distance range.
+We plan to make a bluetooth-controlled pager. A pager is a system of writing numbers which have meanings attached to them. For example, the sequence 07734 is hello and 143 is I love you. We will use bluetooth to connect our phone to the board. We would like to be able to input numbers into the phone and then be able to display the sequence of digits in morse code on the board using the LED lights and also display the numbers on the LED display. A possible extension is to be able to identify “important” messages such as 911 (which means Emergency) or 52 (which means hurry) which are priority messages that can interrupt the currently displayed message and display this one first.
 ### Technical Approach
 
-To build this device, we will use an Ultrasonic Distance Sensor (HC-SR04) and a NXP FRDM-KL46Z board, along with two LEDs (one red and one green). We will program the microcontroller on the board to read the sensor input and activate the LEDs to simulate a traffic light.
+Peripherals we plan on using are a bluetooth adapter/dongle to interface with the Freedom board and support the bluetooth pairing feature and a USB adapter to power the board.
 
-In the program, we will set a distance threshold, and when the distance measured by the sensor falls within that threshold, the traffic light will switch from red to green. After a certain time interval, the traffic light will switch back to red, regardless of whether there is still an object within range. Overall, this project will involve programming and circuit design skills.
+ 
+
+We plan on writing our code in C. Software features will include functions to display to represent our morse code digits and functions to control timing of our display. We will need to consider how we will read in user input from the phone and connect it to the board. To maintain our priority messages and current messages in a queue, we can use a linked list and interrupts.
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/akg72-asc269-mcb343/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/akg72-asc269-mcb343/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/alk248-ama376/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/alk248-ama376/).
 
 You can edit your page in the gh-page branch of this repo.
