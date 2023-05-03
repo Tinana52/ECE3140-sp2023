@@ -2,37 +2,13 @@
 
 ### Project Description
 
-Idea 1: Message Display
-
-The basic idea of our project is scheduling messages on a LCD board. We intend to have a script on a laptop connected to the board which can intake messages from the attached laptop keyboard (and software). These messages will then be sent to the board.
+Our final project idea is a memory game. At the very beginning, the user can select the level of difficulty by pressing the right button n times (as many as they desire), with each consecutive button press resulting in more LEDs displayed. This will be in increments of 8 LED patterns. When the user stops pressing the right button to choose a difficulty, after 5 seconds elapsed, the LED pattern will start. The LEDs will blink in a random pattern for a total of n*8 flashes. Types of LED blinks could include short green, short red, long green, or long red. The user will have to respond with the same pattern by pressing the buttons on the board with respect to each LED. The right button would correspond to the green LED, and the left would correspond to the red one. In the end, the final score will be displayed on the LCD display.  
 
  
-
-Idea 2: Friend Bot
-
-The program asks how the user feels today, to which the user can press a button to select one from a couple of options on the LCD display: happy, sad, stressed, hot, cold, or tired as some potential ideas. Based on the selection, it will display a message on the screen, using a queue if we choose to have multiple messages per option.
-
- 
-
-* We had multiple ideas and didn’t know which would be most appropriate for the project so we provided both. Let us know which you think would be a better choice.
 ### Technical Approach
 
-Idea 1:
-
-Using a blocked locking system, the program will attempt to display these messages on the LCD screen as they are received in real time. If it is not in use, it will be displayed immediately. However if it is in use, the message will be added to a blocked queue. Additionally, using a button, the user can set a message to “read”, making it no longer be displayed on the screen.
-
- 
-
-Idea 2:
-
-It will concurrently activate other devices depending on the option picked. For example, if the person feels hot, they can select this option by pressing the button which could display “Make sure to stay hydrated!” on the LCD display and turn on a fan that interfaces with FRDM board through GPIO pins. We plan to use some of the electronic components, including the fan, from the Arduino MEGA 2560 Complete Starter Kit: [ELEGOO MEGA2560 MANUAL Pdf Download | ManualsLib] (https://www.manualslib.com/manual/1353374/Elegoo-Mega2560.html).
-
- 
-
-* We had multiple ideas and didn’t know which would be most appropriate for the project so we provided both. Let us know which you think would be a better choice.
-
- 
+We will use the peripherals on the board: the two buttons for user input and the LCD display for showing scores. The user buttons should interrupt when the button is pushed, and the pattern of the interrupts between the two types of buttons and the length of each press will be recorded and compared to the original LED pattern for calculating the score. We will create a form of randomness for selecting and pasting together different types of LED blinks using the stdlib.h library. We also will incorporate components from realtime.h file from lab 5 to time the 5-second delay with respect to the last button push for selecting the difficulty level. These components from realtime.h could also be used to calculate the length of each button press.
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/dmp282-fmr35-ssh93/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/dmp282-fmr35-ssh93/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/dsp88-pc546/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/dsp88-pc546/).
 
 You edit you page in the gh-page branch of this repo.
