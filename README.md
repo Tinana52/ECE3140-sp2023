@@ -2,11 +2,37 @@
 
 ### Project Description
 
-We are going to build a tetris-like game where blocks fall and a row is completed when all blocks in that row are filled. There will be multiple different shapes that fall. Shapes can be rotated and moved around on the screen by spinning the board and pressing the buttons on the board. There will be one level to this game. 
+Idea 1: Message Display
+
+The basic idea of our project is scheduling messages on a LCD board. We intend to have a script on a laptop connected to the board which can intake messages from the attached laptop keyboard (and software). These messages will then be sent to the board.
+
+ 
+
+Idea 2: Friend Bot
+
+The program asks how the user feels today, to which the user can press a button to select one from a couple of options on the LCD display: happy, sad, stressed, hot, cold, or tired as some potential ideas. Based on the selection, it will display a message on the screen, using a queue if we choose to have multiple messages per option.
+
+ 
+
+* We had multiple ideas and didn’t know which would be most appropriate for the project so we provided both. Let us know which you think would be a better choice.
 ### Technical Approach
 
-We intend to use the board as a game controller as the board already has buttons and an accelerometer. The game we implement will be something along the lines of Tetris. Game will be built in python, and we will program the board in C and assembly to interact with the python script on a laptop.
+Idea 1:
+
+Using a blocked locking system, the program will attempt to display these messages on the LCD screen as they are received in real time. If it is not in use, it will be displayed immediately. However if it is in use, the message will be added to a blocked queue. Additionally, using a button, the user can set a message to “read”, making it no longer be displayed on the screen.
+
+ 
+
+Idea 2:
+
+It will concurrently activate other devices depending on the option picked. For example, if the person feels hot, they can select this option by pressing the button which could display “Make sure to stay hydrated!” on the LCD display and turn on a fan that interfaces with FRDM board through GPIO pins. We plan to use some of the electronic components, including the fan, from the Arduino MEGA 2560 Complete Starter Kit: [ELEGOO MEGA2560 MANUAL Pdf Download | ManualsLib] (https://www.manualslib.com/manual/1353374/Elegoo-Mega2560.html).
+
+ 
+
+* We had multiple ideas and didn’t know which would be most appropriate for the project so we provided both. Let us know which you think would be a better choice.
+
+ 
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/dm885-dms489-kw462/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/dm885-dms489-kw462/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/dmp282-fmr35-ssh93/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/dmp282-fmr35-ssh93/).
 
 You edit you page in the gh-page branch of this repo.
