@@ -2,13 +2,11 @@
 
 ### Project Description
 
-We aim to design a heart monitor using a pulse sensor that flashes the LED based on the heart rate.
-
- 
+We are planning on designing an Atari Breakout-inspired game that would utilize the accelerometer of one board as the "controller." The game would involve trying to keep a ball above the ground and use it to destroy a wall of blocks.
 ### Technical Approach
 
-We will use a fingertip pulse sensor and the KL46Z to build the heart rate monitor. Also, we will build off our implementation from lab 2 when flashing the LEDs. The pulse sensor requires one analog pin, so we will use one of the KL46Z analog pins (PTB0 -PTC1).
+We would utilize the accelerometer on the board as the controller, and enable communication between the board and the screen through concurrency programming via C. There would be multithread programming as well to prioritize different stage states. Finally, we would need to become proficient in Python GUI libraries for the screen.
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/am2934-bo93/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/am2934-bo93/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/amm546-cdc227-lma93/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/amm546-cdc227-lma93/).
 
 You can edit your page in the gh-page branch of this repo.
