@@ -2,15 +2,11 @@
 
 ### Project Description
 
-We want to create a morse code lock system using a flashlight and the light sensor. First, the user will set a 3 digit password using the flashlight and with the implementation of morse code, then the user will use the flashlight to unlock it, if the right code is passed in. We will use the LEDs to show if the password is right or wrong and the LCD display will display what digit the user entered. A reset functionality will also be looked into being implemented. 
+We are going to build a tetris-like game where blocks fall and a row is completed when all blocks in that row are filled. There will be multiple different shapes that fall. Shapes can be rotated and moved around on the screen by spinning the board and pressing the buttons on the board. There will be one level to this game. 
 ### Technical Approach
 
-We will use a state machine in order to decide if the program is in the lock or unlock state. We will also use the timer handler we have been using throughout the course. An Init function that will set up all devices we need to use to run the project. We will also use a similar lock structure that we have been using in class for projects, helping to store the password. 
-
- 
-
-Additional peripherals and features that we will have to use but still looking into solutions for are a handler for the flashlight, a function to convert the Morse code into digits and the implementations for LCD and LEDs.
+We intend to use the board as a game controller as the board already has buttons and an accelerometer. The game we implement will be something along the lines of Tetris. Game will be built in python, and we will program the board in C and assembly to interact with the python script on a laptop.
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/dlh275-ges248/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/dlh275-ges248/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/dm885-dms489-kw462/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/dm885-dms489-kw462/).
 
 You edit you page in the gh-page branch of this repo.
