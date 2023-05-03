@@ -2,11 +2,11 @@
 
 ### Project Description
 
-This project will use the board as a controller for a simple game. The goal of the game is to roll a ball through a track and not fall off the track. The board, acting as a controller, will provide an angle of tilt to the game controller. Angle of tilt will be used to control the direction of motion of the ball. The player has to tilt the controller in order to control the direction and speed of the ball. Due to the 'inertia' of the ball, players will have to be careful not to speed up too quickly or they risk falling off. 
+We aim to create a reimagined version of the game Doodle Jump. Players can control the character by tilting the board and possibly using a touch sensor. 
 ### Technical Approach
 
-This project will utilize the built in IMU on the board. Taking IMU data from the board and sending it to a computer via a UART line, a python script will interpret the IMU data to get the angle of tilt of the board with respect to vertical. In a pygame script, we can take this tilt angle and apply a force to our virtual ball, which will roll across the screen. A player has to roll the ball from the start of the level to the end of the level without falling off a track. Falling off of the track will simply constitute the center of the ball exiting the given track (which will be made of colored tiles on the screen). Falling off the track will reset the result in a failed level and reset the player. Getting to the end of the track will allow the player to load the next level. The game can include multiple levels where a player has to traverse levels of increasing difficulty. 
+Players will be able to control the jumping direction by tilting the FRDM board to the left or right. We will use an accelerometer to measure the movement, we will also need to fine-tune this feature to implement thresholds for the best gameplay. The FRDM board will contain and update all game logic and communicates with any connected computer via UART. A simple GUI program will run on the computer to facilitate gameplay, to achieve this we plan to use either a Java or Python program. Also as a reach goal, we may implement shooting enemies using the touch sensor. We will be implementing interrupts to simulate an update loop. Also if we are able to implement the touch sensor we will also be implementing concurrency.
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/bzd4-nrs84/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/bzd4-nrs84/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/cac466-xj65/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/cac466-xj65/).
 
 You edit you page in the gh-page branch of this repo.
