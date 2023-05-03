@@ -2,91 +2,27 @@
 
 ### Project Description
 
-Alarm Clock:
+The project we have in mind is a music tuner/mixer. On a high level we plan on basically doing an audio synthesizer. We will input a song (or some kind of a sound) into a microphone, then perform the DFT using the FFT to obtain the frequency information from that sound. Afterwards we can do (some) of the following:
 
-We intend to use our board to control a smart alarm clock.
+* Record a second sound that will also be transformed into the frequency domain and then convolved with the FT of the first recorded sound 
 
-We will be able to configure a scheduled wake up time through our board buttons. At wake up, our board will drive a small speaker (to be purchased) and will play a tone until the alarm is turned off.
+* This has the same effect as multiplying the sounds in the time domain so this way we could mix different recorded sounds. This transformed sound will be sent to a computer where we can play it back to hear the new sound. 
 
-The smart aspect of the alarm clock comes from the configurable ways through which we can turn off our alarm. For light sleepers, a simple button press will turn off the alarm. For more tired users, the board will need to detect a number of jumping jacks before shutting off the alarm.
+* Using the buttons on the board specify the scaling factor for speeding out the sound, then playing it back / saving it on the computer
 
- 
+* Essentially creating a synthesizer, by pushing the buttons, we would like the increase or decrease the speed of the existing sound. This transformed sound will be sent to a computer where we can play it back to hear the new sound. First there will be a button that will signal to the microcontroller to start recording audio. We will press it again to get it to stop recording. Then there will be another set of buttons that will control the speed. On the microcontroller based on how many times the button is pressed on the board, it will set off a bunch of calculations that will change the recording. This transformed recording will be uploaded to a computer where we can play it back and listen to the audio. 
 
-Our satisfactory goals described above (and listed below) are a bare minimum we hope to achieve for our project. Good scope is reasonable goals we think are achievable, and excellent scope are “reach” goals we will attempt if we have time to spare.
-
- 
-
-Our “good” goals involve setting up functionality that will allow our alarm to detect movement when put on the side of our bed. Based on this movement, we will wake up users up to half an hour early if we conclude they are in a “light” phase of sleep.
-
-Our “good” scope also includes more options for turning off the alarm. Namely, utilizing the light sensor. Additionally, we will add quality of life functions such as a gradual ramping up of volume.
-
- 
-
-For excellent scope we will likely only choose one of the options listed below. Namely, we will either have a complex game which needs to be completed successfully in order to turn off the alarm, or implement capacitive control for scheduling a wake up time.
-
- 
-
-Our goals are structured in a way that allows us to incrementally use new components of our board to implement different features.
-
-Satisfactory:
-
-* Alarm clock that plays a tone after a set amount of configurable time. (configurable from the board.)
-
-* Alarm stops on button press or shaking the board(jumping jacks?).
-
- 
-
-Good:
-
-* Wakes up not in Deep Sleep based on accelerometer (checks motion in bed) within 30 minutes of window.
-
-* Doesn’t stop beeping until light turns on.
-
-* Modify volume to gradually get louder as time goes on. 
-
- 
-
-Excellent:
-
-Tasks needed to be satisfied for alarm to stop (Easy to hard tasks, these would be randomized)
-
-* Press the corresponding LED that lights up: simple memory game
-
-* Push on capacitance touch sensor: use the sensor as a slider to set the timer period
-
-* Add a countdown timer for the LED Display to indicate the amount of time left for the task to be completed.
+* Another idea we have is to use many LEDs lined up in a row(using a breadboard with an external battery, buck converter, and maybe some resistors) and depending on the pitch of the sound, it will change how many LEDs light up in the row. A lower pitch will not have a bunch of LEDs light up while a higher pitch will have many more LEDs light up. The goal is to have the LEDs light up in real time with input from a microphone that will be set up. Basically we can play a song on our phones up to a microphone and this will cause LEDs to light up on the breadboard quickly in response to the song. To calculate the pitches we plan to use the FFT functions from the library to calculate the pitch. We will code on the microcontroller certain thresholds that will control how many LEDs light up. Currently we don’t plan on changing the light of the LED but rather the quantity of LEDs that light up. 
 ### Technical Approach
 
-Technical description:
+The technical approach we intend to take is to use ideas of concurrency, locks, and scheduling as there will be multiple processes going on if we use a microphone and multiple buttons that will take in input (start / stop recording) and control our audio. Our system will simultaneously take in input from the microphone and output LEDs (possibly). Multiple processes will be happening in our system which means we need to schedule the processes so it seems like concurrency is happening. We might also need locks to control user mishaps with the switch pressing. We will also have to configure the ports on the board to connect it to a microphone to read the audio. Some software features would include the Fourier Transform libraries(noted below), the implementation of the microphone/sensor audio values to a frequency based audio(used within the Fourier Transform), and the (depending on the project) implementation of creating a new audio file. 
 
-To control the speaker output, we hope to use an active piezoelectric buzzer, which beeps when a DC voltage is applied to it. Time permitting, we can also attempt to implement a speaker or passive piezoelectric buzzer, which turns on given an AC voltage. This would allow us to have further complexity for whatever tone the alarm plays. As a result, for this implementation, we would have to utilize the onboard DAC to power the speaker. 
+The resource we will use to calculate the DFT through the FFT is the [CMSIS DSP] (https://www.keil.com/pack/doc/CMSIS/DSP/html/index.html) library that will have support for the functions. 
 
- 
+The microphone we plan to use is an [Electret Microphone Amplifier - MAX4466 with Adjustable Gain] (https://www.adafruit.com/product/1063). 
 
-We may also end up using an external oscillator to have good time sensing capabilities, as we understand that the onboard low-power-oscillator is prone to fluctuations over large time scales.
-
- 
-
-For our board modules, we will need to interface with our buttons, light sensor, GPIO outputs (for our speaker), the accelerometer, and our LCD system. We will also use interrupts from various sources (RTC, PIT, among other possible sources). Excellent scope may include using the capacitive touch slider as well.
-
-Our light sensor is an ADC signal connected to port 22. We will need to look into the format of data received.
-
- 
-
-Our accelerometer communicates over I2C and is connected to port 25 and 24.
-
- 
-
-Our LCD system is connected and controlled via a s401 connection. We will use the sample code and LCD functions provided by the FRDM-KL46Z library to display the time on the LCD screen. 
-
- 
-
-The capacitive touch slider utilizes it’s own signals TSI0 Channels 9 and 10. We will need to use Freescale’s touch sense software to implement parsing of said data.
-
- 
-
-Utilizing all of these modules will take a fair amount of exploration, and we hope to become better embedded systems programmers as a result. Any feedback regarding the feasibility of utilizing all of these separate modules (in terms of workload/difficulty in interfacing) would be very appreciated.
+The peripherals we plan to use are to convert ADC/DAC. We do not plan to use many communication protocols because we are mainly soldering everything on and connecting everything through wires. Based on the microphone we are using and the pins it has we might be using SPI communication but right now based on the microphone we have chosen we plan to not use this communication protocol. To connect the microcontroller to a computer we will be using UART with the cable. 
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/ayc62-kc684-nrn25/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/ayc62-kc684-nrn25/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/ayl47-dht35-zk66/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/ayl47-dht35-zk66/).
 
 You edit you page in the gh-page branch of this repo.
