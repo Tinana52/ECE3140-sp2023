@@ -2,11 +2,11 @@
 
 ### Project Description
 
-We are building a game of Connect-4 controlled by the buttons and slider of the board. We can use the slider to choose which column to drop the coin into, and then we press the button to drop the coin. We can also use the accelerometer to detect shaking of the board to trigger a message if you want to reset the game.
+We will be implementing a smart thermostat which controls the temperature of a room based on the ambient room temperature.
 ### Technical Approach
 
-We will use the slider, the buttons, and the accelerometer. We will build the game using C and Python. We will run the game on a computer and connect the embedded board to the computer via USB serial.
+We plan to create a controlled environment, and alter the temperature below and above certain thresholds to demonstrate the functioning of smart thermostat. We may use peripherals such as a fan, thermometer, heating and cooling unit. We will be programming in C++ or python, and will use a notification alert system, and a temperature input system.
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/ac2324-hth27/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/ac2324-hth27/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/aas332-dag334/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/aas332-dag334/).
 
 You edit you page in the gh-page branch of this repo.
