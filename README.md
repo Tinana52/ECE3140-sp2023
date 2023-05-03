@@ -2,11 +2,13 @@
 
 ### Project Description
 
-We would like to design a reaction time game with two players to see who can win in a competition of speed. We want to use the board to facilitate the game, utilizing the buttons to track the players' reactions and the LCD screen to display results.
+We aim to design a heart monitor using a pulse sensor that flashes the LED based on the heart rate.
+
+ 
 ### Technical Approach
 
-We plan to use general-purpose input-output (GPIO) as we want to use multiple buttons on the board. We also are planning to override interrupts because when a player hits a button, we need to handle the result of the pressed button, ie if player A or B wins.
+We will use a fingertip pulse sensor and the KL46Z to build the heart rate monitor. Also, we will build off our implementation from lab 2 when flashing the LEDs. The pulse sensor requires one analog pin, so we will use one of the KL46Z analog pins (PTB0 -PTC1).
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/am2445-jaj228-lro23/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/am2445-jaj228-lro23/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/am2934-bo93/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/am2934-bo93/).
 
 You edit you page in the gh-page branch of this repo.
