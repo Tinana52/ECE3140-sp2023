@@ -2,11 +2,29 @@
 
 ### Project Description
 
-We are planning on designing an Atari Breakout-inspired game that would utilize the accelerometer of one board as the "controller." The game would involve trying to keep a ball above the ground and use it to destroy a wall of blocks.
+The general idea is to make a speech-to-text program, then use the text to prompt Open AI’s GPT-4 model (the same model used to implement chatGPT)
 ### Technical Approach
 
-We would utilize the accelerometer on the board as the controller, and enable communication between the board and the screen through concurrency programming via C. There would be multithread programming as well to prioritize different stage states. Finally, we would need to become proficient in Python GUI libraries for the screen.
+To achieve this, we would need to hook up a microphone to the board and then use the board’s Audio to Digital converter to get the voice data in digital format. We would then use Google’s speech-to-text API to generate text from the voice data. Finally, we would use this text to prompt chatGPT. 
+
+ 
+
+To make the project more involved, we would use one of the switches on the board to light up the red LED which will serve as an indication that the microphone is recording. Also, because of constraints of memory and tokens for the chatGPT model, we limit the recording time to a number of seconds before the board stops recording. 
+
+The microphone to be used:
+
+https://learn.sparkfun.com/tutorials/electret-mic-breakout-board-hookup-guide
+
+ 
+
+List of supplies:
+
+Microphone
+
+Breadboard
+
+Wires
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/amm546-cdc227-lma93/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/amm546-cdc227-lma93/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/aoa9-cca54/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/aoa9-cca54/).
 
 You edit you page in the gh-page branch of this repo.
