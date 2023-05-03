@@ -2,11 +2,11 @@
 
 ### Project Description
 
-A crucial part of engineering is distance. Distance is involved in velocity, energy, and many other topics within the discipline. The idea is to create an embedded system that allows a user to gauge distance. The device will use a distance sensor to gauge how far away an object in front of it is. This device will peripherally include a light that will be dim or bright depending on the distance the object is from the system and an audio device that can play at a higher pitch when objects are close and a lower pitch when they are far away. This provides a visual component to verify with ease how close the object is to a user who is standing far away. For the user who wants to be near the device while using it, it will be able to give readings of distance on a computer hooked up to the device.
+We are creating a mock satellite, including features such as gyroscope sensors, a light sensor, and an accelerometer. From the light sensor we will know which way we want to realign the satellite, as we are going to want to simulate the satellite turning toward the earth to take a "picture" of it. Additionally we can have things externally such as wifi to mock the idea of a ground station to communicate with our satellite. We will use the LEDs on the board to simulate the X, Y and Z axes "thrusting" to counter the thrust that the gyroscope sensor is feeling to align the satellite. The brightness of the LED may correlate to the intensity of the thrust needed.
 ### Technical Approach
 
-From a software perspective, in order to achieve a reading of distance and a correct level of light, the device will use concurrency and locks to make sure that the distance is only changed in one process at a time. This embedded system can be used for distance measuring for scientific purposes, for architecture, and for finding lost objects as well. There will be a process for calculating the distance, one for determining what sound should be made, one for determining light brightness, one to handle reading to a user computer, and a main process to organize all processes correctly. The technical approach is essentially to make every feature a separate process, giving the user a device that best suits their wants and needs.
+We are planning to use concurrency since we are using multiple sensors and constant reading data. We are planning to use UART protocol communication between the board and the sensors.
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/cjp245-tkt23/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/cjp245-tkt23/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/cmc562-jtg239-nlp52/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/cmc562-jtg239-nlp52/).
 
 You can edit your page in the gh-page branch of this repo.
