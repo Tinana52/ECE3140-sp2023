@@ -2,11 +2,13 @@
 
 ### Project Description
 
-This project will be a reaction-based game. In it, the LEDs will light up at random intervals. When they light up, the first player to hit their push-button will get a point. Green represents player 1, and red represents player 2. Thus, if player 1 wins, green LED will light up.
+We will implement a flashlight morse code decoder. After the user shines a flashlight toward the light sensor of the board, in the pattern of morse code, the board will convert it into corresponding numbers or English. The user can press a button, such as SW1, to end the input, and the board will send the translated string to a text terminal on a laptop, where it will be displayed.
 ### Technical Approach
 
-There will be three buttons used, one for game control (start / reset), and a button for each player. For this project, we will have to use the built-in timer (non-real time). 
+We will be using the light sensor on the board to detect the flashlight input. We will also be using a text terminal, like PuTTY, to display the output and UART to set up the communication between the board and the laptop terminal.
+
+In order to incorporate what we have learned in class, we will be using concurrency to simultaneously detect flashlight input while processing the data to English to display on the LCD screen. This in turn will enhance the responsiveness and efficiency of our project.
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/mak435/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/mak435/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/ml2226-nai8-yz547/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/ml2226-nai8-yz547/).
 
 You can edit your page in the gh-page branch of this repo.
