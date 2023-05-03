@@ -2,11 +2,11 @@
 
 ### Project Description
 
-For our project we want to make a wack-a-mole type game using the board. We will have the LEDs flash on and off to represent the “moles” and the two buttons will be used to “wack” the corresponding LED. The LCD screen will display the timer as each game will only last 30 seconds. At the end of the game the screen will display the score which will be calculated based on the accuracy of the “wacks”.
+We would like to build an embedded plant monitoring system. Based on humidity and temperature levels of a plant's ecosystem, we can adjust the temperature of a light shining on the plant and automatically water the plant. 
 ### Technical Approach
 
-* From a software point of view, we want to utilize the buttons, read interrupts, and utilize a lock to protect the score variable. The lock will ensure that the score is properly counted, since both button presses could result in score increase. We will also need to display a count down on the screen and the score. In order to manage this we will need to organize the methods for managing the button interrupts, clock, and locks into header files so that we can access them appropriately. Our main process will activate the led flashing, initialize the score at 0, and activate the channels for interrupts. We will call various functions when the buttons are pushed to check how many points are scored. We will use a battery pack as a peripheral to enhanced the handheld game feeling of our project. 
+We are planning on using a moisture monitor, a water pump, a temperature monitor, and perhaps some sort of articial light. Using the moisture monitor, we can create a script that determines whether the moisture is above or below a specific threshold, and based on that information, we will be able to adjust the amount of water being pumped into the system using the water pump. We will do the same in terms of the temperature peripherals. 
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/bmk89-efd45-man229/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/bmk89-efd45-man229/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/bnw36-eg455/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/bnw36-eg455/).
 
 You can edit your page in the gh-page branch of this repo.
