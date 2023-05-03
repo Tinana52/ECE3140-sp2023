@@ -2,11 +2,11 @@
 
 ### Project Description
 
-Our proposed project is an audio effects unit. We plan to use a guitar, plug it into an audio jack, and then solder wires from the audio jack to headers that can be connected to the board’s GPIO pins. We will use the board’s 16-bit ADC to convert the audio data into bits, and then run algorithms on it that will apply various audio effects (such as distortion or reverb). The user can press buttons to toggle between these effects. We can send this data through the board’s DAC, or just send the digital data to a GPIO pin. We can connect wires from the board to an audio plug, which can then be plugged into an amp and hopefully play our modified signal. 
+We are going to build a disco lamp that will flash fun colors.  The lamp will have a switch to put it in "chill mode" or "rave mode".  The modes will dictate the colors which are displayed and the speed at which they change.  The LED strip lights used will be housed inside a reflective dome in order to create an optimal disco effect.  We will have 3 different independently controlled LED strands which can take on any color and blink in patterns that we design.  The board and wiring will be on the back side of the dome so it is out of site when hung from the ceiling. 
 ### Technical Approach
 
-We need some form of I/O in order to interface with the audio input (guitar) and audio output. We will be using the GPIO pins on the board in conjunction with Audio jacks which we will solder. We will also be using the board’s built in ADC and DAC. In terms of software we will be making use of IO and interrupts so that the input signal can be read, and buttons will interrupt to switch between the different audio effects. In addition, there will be concurrency implemented so that the signal can be read from the input while simultaneously outputting audio through the output. 
+We are going to use LED Lights with a power and ground input that can be externally powered and digital signal input connected to the board to control color.   We will use a large bowl and a reflective lining (likely tinfoil) to create the reflective dome.  We will use interrupts to create the different LED changing frequencies.  Each change will be a separate process with delays between them.  We will also create flashing processes.  The builtin board switch will be used to switch between the modes this will trigger a context switch.
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/ehg54-hw533-slw259/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/ehg54-hw533-slw259/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/el549-jnh84-jsm443/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/el549-jnh84-jsm443/).
 
 You edit you page in the gh-page branch of this repo.
