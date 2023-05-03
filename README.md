@@ -2,11 +2,11 @@
 
 ### Project Description
 
-We plan on making an electronic deadbolt lock with a keypad. We will 3D print the body of the lock and the deadbolt, order a keypad, a motor, and some gears, and use the board as the brain of the lock. We will write the code to transfer to the lock, and be able to use a battery pack to power it. We could use an ultrasonic sensor to activate the lock. Then from there, be able to input a code, that when correct unlocks the lock and flashes green led lights. Otherwise, it will flash red led lights. We can implement sequences of certain key presses to create passcodes, delete passcodes, and possible additional keypad functionality.
+We would like to create a Morse Code Detector similar to the one proposed on Tuesday's lectures with some extra features. Something we would like to add is two way decoder: from letters to Morse Code and from Morse Code to letters. Another feature is to have it support binary code as well as being able to create it's own code for those in need of a reliable form of encryption. 
 ### Technical Approach
 
-As stated above, our hardware will consist of our board, a keypad, a motor with gears, and a 3D printed body. In terms of our software, we will have to implement logic to read the inputs and perform tasks depending on the input received. We can make use of scheduling deadlines to perform a reset if an input is not received within a certain time limit.
+Since this project can be implemented with just the breadboard, we do not need any other peripherals, perhaps a flashlight and obviously a computer. In terms of software, we haven't decided what features we are planning to use, but we'll deinitely have at least an input and ouput option for users to code in.
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/ldg62-mao94-tll68/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/ldg62-mao94-tll68/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/ljf85-rl569-vs356/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/ljf85-rl569-vs356/).
 
 You can edit your page in the gh-page branch of this repo.
