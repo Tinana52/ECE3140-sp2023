@@ -2,13 +2,11 @@
 
 ### Project Description
 
-For our project we are intending to create a harmonica device through use of our computer's speakers and the capacitive touch slider. When sliding the touch slider to the left it will produce a sound lower in frequency in the octave, and when slid to the right higher up in the octave. The two buttons on either side of the slider will then be used to change which instrument is being played. The 4 digit display will be used to show which frequency is being played.
+We are planning on building a drone using the board. Our current plan is to find/use software to emulate a flight controller using ibus communication protocol. Johnny has many drone parts such as motors, esc, transmitter/receiver, etc. Both team members are also on Cornell Aerial Robotics Club, so we do have experience with drones. However, if additional parts are needed, we all agreed to split the costs. A 3D printer will be used to print the frame. We do understand the difficulty of this project, and we have decided that if a drone is too hard, we will plan on creating a RC car (or something that does not fly). In the next couple of days, we intend to explore the feasibility of our drone project and decide for certain if this is the path we want to take. 
 ### Technical Approach
 
-Peripherals that we intend to use is a speaker. And we may use a python script to generate the sound. We would also use an external library to generate noises from different instruments. We will transmit data to the computer which will then generate the required instrument noise, which will then send it back to the board to use its DAC to then drive a speaker.
-
-We will also try to load a sound font onto the board to play everything from the board itself. Sounds will probably be limited to 8-bit sounds, but it would then be all contained on the board. We could even get a sound chip to make the sounds on.
+Many drone flight controllers communicate with external hardware via the ibus communication protocol. We plan on writing code or potentially finding a code library online that will allow our board to emulate a flight controller. We will then use a lipo battery, electronic speed controls, motors, a transmitter and a receiver to build our quadcopter. We must then also learn how to control the 4 escs and the receiver with the GPIO pins on the board. If this proves to be too difficult, we will shift to an RC car which would be less challenging. 
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/ir93-tjf87/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/ir93-tjf87/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/jjm469-wih3/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/jjm469-wih3/).
 
 You edit you page in the gh-page branch of this repo.
