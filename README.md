@@ -2,11 +2,13 @@
 
 ### Project Description
 
-I will be designing an interactive reaction game using the board to control the game that will be displayed on the computer screen. My game will have a main screen where circles (or some other shape) of two colors will appear with random frequencies. The player will be expected to react to these appearances of shapes through the board, and according to their reaction time, they will be collecting points. I am planning to use two (or more) buttons to be able to press and be an indicator of the player’s reaction to a certain color. This will be a one-player game, but other features like a scoreboard can be implemented to enable multiple players.
+The project is a simple traffic light system that uses an Ultrasonic Distance Sensor (HC-SR04) and a NXP FRDM-KL46Z board, along with two different color LEDs (one red and one green). The device will simulate the behavior of a traffic light, changing between red and green states depending on the presence of an object within a certain distance range.
 ### Technical Approach
 
-I am planning to use two (or more) buttons to be able to press and be an indicator of the player’s reaction to a certain color. Since there might be events like multiple presses to a button, resource conflicts might occur. For this reason, I am planning to implement locks, possibly taking the implementation from the previous labs. Also, I will be using interrupts to be able to interrupt the process that will be waiting on an input (from the button channel). I am not entirely sure about how the front end of the game and the board will interact, so I cannot predict the other software features I will be using.
+To build this device, we will use an Ultrasonic Distance Sensor (HC-SR04) and a NXP FRDM-KL46Z board, along with two LEDs (one red and one green). We will program the microcontroller on the board to read the sensor input and activate the LEDs to simulate a traffic light.
+
+In the program, we will set a distance threshold, and when the distance measured by the sensor falls within that threshold, the traffic light will switch from red to green. After a certain time interval, the traffic light will switch back to red, regardless of whether there is still an object within range. Overall, this project will involve programming and circuit design skills.
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/aea85/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/aea85/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/akg72-asc269-mcb343/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/akg72-asc269-mcb343/).
 
 You edit you page in the gh-page branch of this repo.
