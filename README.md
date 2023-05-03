@@ -2,11 +2,11 @@
 
 ### Project Description
 
-We plan to create a game based off the toy Bop-it. We can write code to display different commands to the user such as press button x, touch the sensor, step forwards, step backwards, step left, and step right. The more commands a user executes successfully the faster the commands will come. When they mess one up the game ends.
+We will implement a memory/reflex game on the board using the green and red LED and two of the buttons on the board. During the game, we will randomly generate a sequence of red and green blinks which the player has to match (pressing one button in response to the green LED, and another for the red). The game will verify if the player presses the correct button within a critical time window. The sequence of blinks speeds up as the game goes on, becoming more and more difficult. The game ends when the player presses an incorrect button (not matching the sequence that was displayed) or fails to press the correct button in time. 
 ### Technical Approach
 
-We plan to use almost all the peripherals on the board. We want to use the compass, gyroscope, buttons, and the capacitive touch slider. As far as software features we don't need any major ones. The coding part will not be too complicated because all we need to do is display commands and continue to provide new ones within the game logic.
+We are planning to use our FRDM-KL46Z board to display the sequence of blinks and to take in user input through the buttons. SW1 and SW3 are located on opposite sides of the board, so this will be suitable for our purposes. We will not need to use any other peripherals. In terms of software, the code to generate the random sequence of blinks and validate the user input will require a simple Python program, and we will need to write C code using interrupts to respond to user presses of the buttons. 
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/cmm478-ezj4-mp925/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/cmm478-ezj4-mp925/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/cqs2-dyc33-gh386/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/cqs2-dyc33-gh386/).
 
 You edit you page in the gh-page branch of this repo.
