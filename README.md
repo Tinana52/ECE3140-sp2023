@@ -2,17 +2,11 @@
 
 ### Project Description
 
-We got our inspiration from the Otamatone which is a toy musical synthesizer. We knew that the board had a capacitive touch slider and we wanted to connect it to the computer speaker to play music and sound. We will also have three buttons for the user to choose the frequency range: tenor, alto, and soprano. The user can use the touch slider to slide and play music, similar to the working principle of the Otamatone.
+This project will be a reaction-based game. In it, the LEDs will light up at random intervals. When they light up, the first player to hit their push-button will get a point. Green represents player 1, and red represents player 2. Thus, if player 1 wins, green LED will light up.
 ### Technical Approach
 
-Peripheral: PIT(to read continuous input from slider), Interrrupt(for switching frequency range when the user is playing and pressing a button), Lock (to prevent the user from pressing two buttons together)
-
-Software Feature: We plan to finish the hardware synthesizer first because it's a toy synthesizer so the user experience largely depends on the hardware, and software is a lower priority. We might make a GUI display the note the user is playing based on the frequency detected.  
-
- 
-
- 
+There will be three buttons used, one for game control (start / reset), and a button for each player. For this project, we will have to use the built-in timer (non-real time). 
 ## Your page
-You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/lw584-yg298/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/lw584-yg298/).
+You can access your place holder page on [https://pages.github.coecis.cornell.edu/ece3140-sp2023/mak435/](https://pages.github.coecis.cornell.edu/ece3140-sp2023/mak435/).
 
 You can edit your page in the gh-page branch of this repo.
