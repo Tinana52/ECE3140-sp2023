@@ -33,7 +33,7 @@
 
 <p>For peripherals we plan to use the TCS3200 color sensor and a common piezo buzzer. In terms of the hardware, the TCS3200 color sensor reads color by using a 8x8 photodiode array, then it uses the current-to-frequency converter to output a square wave whose frequency is related to  light intensity of that color. It can do this procedure for all three primary colors red, green, and blue, so by comparing the ratio between RGB readings we would be able to distinguish more than 3 colors. This is simply because all the colors can be obtained by mixing RGB colors with a different ratio. Another reason for choosing this sensor is that TCS3200 takes digital inputs and outputs, so we believe it should not be too hard to interface it with a microcontroller like our ARM Cortex M0 processor. After we read the data and determine the frequency wanted, we send a signal in PWM to the piezo buzzer. The buzzer part might sound easy, but it requires us to change the frequency of the PWM signal which might require some more work than if we were to achieve the same thing on a platform like Arduino (although the idea behind should be similar). On the software side, the overall general structure is to write a forever running loop where inside we keep reading the RGB data from the digital pin of the board and compare its values with a certain defined threshold. But once the RGB data exceeds that threshold which means the sensor has detected a color, an interrupt should be generated which should transfer the control to our ISR. Next, in the ISR it quickly compares that RGB data with some ranges we pre-defined to figure out the color and sends the corresponding PWM signal to the piezo buzzer. This way we are able to distinguish colors and play different sounds based on the colors.</p>
 
-<h4>Current Progress</h4>
+<h3>Current Progress</h3>
   
 <p>Compared to last time, we obtained a more detailed understanding of our TCS3200 sensor. As mentioned above, the sensor transmits color information by outputting 50% duty cycle square waves of different frequencies (i.e. it sets a digital pin high/low at different speeds depending on the color). Therefore, by using polling to continuously check the state of the OUT pin and enable/disable the PIT timer when the OUT state changes, we are able to calculate the period (1/frequency) of the square wave. In this way, we only need to monitor the state of a pin over time and do not have to employ any communication protocol such as serial to talk to our sensor. One thing to note is that, because the color could change anytime which means we cannot predict when the frequency of the square wave will change, we need to keep calculating the period and remember to reset our PIT timer after every round of recording.</p>
 
@@ -63,9 +63,9 @@
 </ul> -->
 
 <hr>
-<h3> Section Details </h3> 
+<h2> Section Details </h2> 
 Here is a more detailed breakdown of what the different sections should have. 
-<h4>Introduction</h4>
+<h3>Introduction</h3>
 <ol>
 <li>Motivation of your project. If appropriate, consider the impact of your system public health, safety, and 
   welfare as well as relevant global, cultural, social, environmental, and economic factors.</li>
@@ -74,11 +74,11 @@ Here is a more detailed breakdown of what the different sections should have.
 <li>Summary of what you have accomplished and what you have learned.</li>
 </ol>
 
-<h4> System Overview and diagram </h4>
+<h3> System Overview and diagram </h3>
 Give a high-level description of how the system works and how the different parts work together. 
 Include a block diagram of the system showing how components interact. This diagram could potentially be replaced by very clear writing. (You don't need the diagram for the web check-in).
       
-<h4>Video</h4> 
+<h3>Video</h3> 
 The video should have the right length (3-4 min, if shorter than 2 min or longer than 5 mins, we will deduct points) 
 The video should be self-contained, i.e. understandable by someone who has not read your whole website.
 <ol>
@@ -94,19 +94,19 @@ The video should be self-contained, i.e. understandable by someone who has not r
 <li> Did you come up with some super clever tests? </li>
 </ul>
       
-<h4> Technical description </h4>
+<h3> Technical description </h3>
 <ol>
 <li> Explains how their system/software works. </li>
 <li> Should be at an appropriate level of detail to allow you to evaluate their design decisions. </li>
 <li> Projects with additional hardware must include a schematic. </li>
 </ol>
       
-<h4> Testing </h4>
+<h3> Testing </h3>
 <ol>
 <li> Describes their testing procedure and how they determined the system works correctly. </li>
 <li> Some projects may not have traditional test cases (e.g. tested the system by human interaction with it), but all projects must be tested. </li>
 </ol>
-<h4> Work Distribution </h4>
+<h3> Work Distribution </h3>
 Talk about how you split up the work and made sure that everyone contributed. 
       
       
