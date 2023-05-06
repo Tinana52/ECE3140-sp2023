@@ -37,13 +37,10 @@
   
 <p>Compared to last time, we obtained a more detailed understanding of our TCS3200 sensor. As mentioned above, the sensor transmits color information by outputting 50% duty cycle square waves of different frequencies (i.e. it sets a digital pin high/low at different speeds depending on the color). Therefore, by using polling to continuously check the state of the OUT pin and enable/disable the PIT timer when the OUT state changes, we are able to calculate the period (1/frequency) of the square wave. In this way, we only need to monitor the state of a pin over time and do not have to employ any communication protocol such as serial to talk to our sensor. One thing to note is that, because the color could change anytime which means we cannot predict when the frequency of the square wave will change, we need to keep calculating the period and remember to reset our PIT timer after every round of recording.</p>
 
-<br><br>
 <p>As we are trying to interface the sensor, one slight difficulty is that, instead of reading all three RGB data at one time, our sensor is only able to read one of the colors at a time. This means we need to repeat the above procedure three times in order to collect the complete RGB information for a given color. That is, we have to constantly set and clear pins S2 and S3 in order to change the color filter so that we could switch to reading a different color. This can be achieved through a conditional for-loop that keeps going through the three colors and sets up the filter accordingly. For the frequency scaling factor (controlled by S0 and S1), we decide to set the to 20% for now (S0=1, S1=0) which gives us an intermediate frequency range and also an intermediate accuracy (tradeoff between detection range and accuracy). </p>
 
-<br><br>
 <p>On the hardware side, we have soldered the header pin socket to the board so that we could be more flexible in case we want to switch pins halfway through the project. For wiring, we selected PTD2(D9), PTD4(D10), PTD6(D11), PTD7(D12), PTD3(D2) to be connected with S0, S1, S2, S3, and OUT on TCS3200 color sensor, respectively. We choose those pins because they seem to be pure GPIO pins and do not have any extra default functionality or “strange” setting that might interfere with our basic reading/writing operation.</p>
 
-<br><br>
 <p>Finally, we have just started on the buzzer side of the project which might require us to use a PWM signal. So we decided to use PTC8 (D6) pin on the board to control it since it is also a PWM pin. We have looked into some SDK examples on MCUxpresso about PWM and will continue to work on it during the following days.</p>
   
   
