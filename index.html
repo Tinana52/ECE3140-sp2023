@@ -27,7 +27,7 @@
     push to the "gh-pages" branch. Also note, that while the repo is private the <strong>page content is public</strong>.</p>
 <hr> -->
 
-<h2>System Overview</h2> 
+<!-- <h2>System Overview</h2> 
 <p>For our project “Hear the Colors!”, the main goal is to design a machine that could transform color into sound, so that we can compose a song using different colors.
 <p>To implement this project, we will mainly use a color sensor and a buzzer in addition to our FRDM-KL46Z board. One way to interact with this machine is to first prepare different colors on a long piece of paper, then insert this paper into our machine box (which has the color sensor in it) and slowly pull the one end of that piece of paper through the box. Then as the paper is pulled through and the color on it is scanned by the color sensor, the sensor will send the RGB data corresponding to that color back to the board and our buzzer could then generate sound with different frequencies based on the color. Through some careful arrangement of the colors, we could even play some famous songs using the machine.</p>
 
@@ -42,7 +42,7 @@
 <p>On the hardware side, we have soldered the header pin socket to the board so that we could be more flexible in case we want to switch pins halfway through the project. For wiring, we selected PTD2(D9), PTD4(D10), PTD6(D11), PTD7(D12), PTD3(D2) to be connected with S0, S1, S2, S3, and OUT on TCS3200 color sensor, respectively. We choose those pins because they seem to be pure GPIO pins and do not have any extra default functionality or “strange” setting that might interfere with our basic reading/writing operation.</p>
 
 <p>Finally, we have just started on the buzzer side of the project which might require us to use a PWM signal. So we decided to use PTC8 (D6) pin on the board to control it since it is also a PWM pin. We have looked into some SDK examples on MCUxpresso about PWM and will continue to work on it during the following days.</p>
-  
+   -->
   
 <!-- <h3>Web Check-In</h3>
 
@@ -62,10 +62,10 @@
 <li>Work Distribution (skip if you work by yourself)</li>
 </ul> -->
 
-<hr>
-<h2> Section Details </h2> 
+<!-- <hr>
+<h2> Section Details </h2>  -->
 <!-- Here is a more detailed breakdown of what the different sections should have.  -->
-<h3>Introduction</h3>
+<h2>Introduction</h2>
 <!-- <ol>
 <li>Motivation of your project. If appropriate, consider the impact of your system public health, safety, and 
   welfare as well as relevant global, cultural, social, environmental, and economic factors.</li>
@@ -79,7 +79,8 @@
 
   <p>In designers’ perspective, we learned how to iteratively design a system through multiple design cycles, testing, and refining ideas based on the system’s feedback. We also get acquainted with the process of setting up hardwares and doing coding work after carefully learning the datasheet and reference manual.</p>
 
-<h3> System Overview and diagram </h3>
+  
+<h2> System Overview and diagram </h2>
 <!-- Give a high-level description of how the system works and how the different parts work together. 
 Include a block diagram of the system showing how components interact. This diagram could potentially be replaced by very clear writing. (You don't need the diagram for the web check-in).
        -->
@@ -89,7 +90,7 @@ Include a block diagram of the system showing how components interact. This diag
   
   <p>Here, the key points are: 1. How to calculate the frequency of the received square wave; 2. What should be the appropriate RGB range for each color; 3. How to control the passive piezo buzzer. The first and last key points will be discussed in detail in the technical description section below, and the second point will be elaborated in the testing section.</p>
   
-<h3>Video</h3> 
+<h2>Video</h2> 
 The video should have the right length (3-4 min, if shorter than 2 min or longer than 5 mins, we will deduct points) 
 The video should be self-contained, i.e. understandable by someone who has not read your whole website.
 <ol>
@@ -105,19 +106,19 @@ The video should be self-contained, i.e. understandable by someone who has not r
 <li> Did you come up with some super clever tests? </li>
 </ul>
       
-<h3> Technical description </h3>
+<h2> Technical description </h2>
 <ol>
 <li> Explains how their system/software works. </li>
 <li> Should be at an appropriate level of detail to allow you to evaluate their design decisions. </li>
 <li> Projects with additional hardware must include a schematic. </li>
 </ol>
       
-<h3> Testing </h3>
+<h2> Testing </h2>
 <ol>
 <li> Describes their testing procedure and how they determined the system works correctly. </li>
 <li> Some projects may not have traditional test cases (e.g. tested the system by human interaction with it), but all projects must be tested. </li>
 </ol>
-<h3> Work Distribution </h3>
+<h2> Work Distribution </h2>
 Talk about how you split up the work and made sure that everyone contributed. 
       
       
