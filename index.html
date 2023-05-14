@@ -64,20 +64,31 @@
 
 <hr>
 <h2> Section Details </h2> 
-Here is a more detailed breakdown of what the different sections should have. 
+<!-- Here is a more detailed breakdown of what the different sections should have.  -->
 <h3>Introduction</h3>
-<ol>
+<!-- <ol>
 <li>Motivation of your project. If appropriate, consider the impact of your system public health, safety, and 
   welfare as well as relevant global, cultural, social, environmental, and economic factors.</li>
 <li>Describes briefly what their system does.</li>
 <li>Include any necessary background information.</li>
 <li>Summary of what you have accomplished and what you have learned.</li>
-</ol>
+</ol> -->
+  <p>In this project, we designed a machine that could transform color into sound, so that we can compose a song using different colors. Using RGB data measured by a color sensor, the FRDM board could send different control signals to the piezo buzzer thus making it play different frequency sounds.</p>
+
+  <p>In the perspective of society, this project offers a unique medium for artistic expression, enabling individuals to compose music based on colors.This will promote creativity, cultural enrichment, and personal well-being. Moreover, our project may enhance accessibility for individuals with visual impairments by allowing them to perceive and interact with various  colors through sound, i.e. hearing the sound!</p>
+
+  <p>In designers’ perspective, we learned how to iteratively design a system through multiple design cycles, testing, and refining ideas based on the system’s feedback. We also get acquainted with the process of setting up hardwares and doing coding work after carefully learning the datasheet and reference manual.</p>
 
 <h3> System Overview and diagram </h3>
-Give a high-level description of how the system works and how the different parts work together. 
+<!-- Give a high-level description of how the system works and how the different parts work together. 
 Include a block diagram of the system showing how components interact. This diagram could potentially be replaced by very clear writing. (You don't need the diagram for the web check-in).
-      
+       -->
+  <img src="img/block_diagram.png" alt="diagram" width="500" height="333">
+  
+  <p>As shown in the high-level diagram above, there are two main peripherals used: a color sensor and a buzzer. After triggering the color sensor, it will read color by using a 8x8 photodiode array, then using a current-to-frequency converter to output a 50% duty cycle square wave whose frequency is related to light intensity of that color. It can do this procedure for all three primary colors red, green, and blue, so by comparing the ratio between RGB readings we would be able to distinguish more than 3 colors. Then, with the RGB data, we can then send control signals to the piezo buzzer to generate a certain frequency sound corresponding to the detected color.</p>
+  
+  <p>Here, the key points are: 1. How to calculate the frequency of the received square wave; 2. What should be the appropriate RGB range for each color; 3. How to control the passive piezo buzzer. The first and last key points will be discussed in detail in the technical description section below, and the second point will be elaborated in the testing section.</p>
+  
 <h3>Video</h3> 
 The video should have the right length (3-4 min, if shorter than 2 min or longer than 5 mins, we will deduct points) 
 The video should be self-contained, i.e. understandable by someone who has not read your whole website.
