@@ -87,7 +87,9 @@ Include a block diagram of the system showing how components interact. This diag
   <img src="block_diagram.png" alt="diagram" width="800" height="533">
   
   <p>As shown in the high-level diagram above, there are two main peripherals used: a color sensor and a buzzer. After setting up the color sensor, it will read color by using a 8x8 photodiode array, then using a current-to-frequency converter to output a 50% duty cycle square wave whose frequency is related to light intensity of that color, as shown in the figure below.</p>
-  <img src="color_sensor.png" alt="diagram" class="center" width="600" height="200">
+  <div style="text-align: center;">
+    <img src="color_sensor.png" alt="diagram" width="600" height="200">
+  </div>
   
   <p>It can do this procedure for all three primary colors red, green, and blue, so by comparing the ratio between RGB readings we would be able to distinguish more than 3 colors. Then, with the RGB data, we can then send control signals to the piezo buzzer to generate a certain frequency sound corresponding to the detected color.</p>
   
